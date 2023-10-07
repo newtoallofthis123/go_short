@@ -14,7 +14,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	api := NewAPIServer("localhost:3579", store)
+	api := NewAPIServer(":3579", store)
 	err = api.Start()
 	if err != nil {
 		log.Fatal(err)

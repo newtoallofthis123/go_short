@@ -6,6 +6,8 @@ type Env struct {
 	Db       string
 	User     string
 	Password string
+	Port     string
+	Host     string
 }
 type CreateURLRequest struct {
 	url  string

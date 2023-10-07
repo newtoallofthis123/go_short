@@ -20,7 +20,8 @@ type DbInstance struct {
 
 func NewDBInstance() *DbInstance {
 	env := GetEnv()
-	connStr := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable", env.User, env.Password, env.Db)
+	connStr := fmt.Sprintf("user=%s password=%s dbname=%s host=%s port=%s sslmode=disable", env.User, env.Password, env.Db, env.Host, env.Port)
+	fmt.Println(connStr)
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)

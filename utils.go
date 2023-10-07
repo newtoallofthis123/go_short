@@ -20,6 +20,8 @@ func GetEnv() Env {
 		Db:       os.Getenv("DB"),
 		User:     os.Getenv("USER"),
 		Password: os.Getenv("PASSWORD"),
+		Port:     os.Getenv("PORT"),
+		Host:     os.Getenv("HOST"),
 	}
 }
 
