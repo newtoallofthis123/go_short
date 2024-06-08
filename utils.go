@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/rand"
 	"fmt"
-	"log"
 	"math/big"
 	"os"
 
@@ -11,10 +10,7 @@ import (
 )
 
 func GetEnv() Env {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
+	godotenv.Load()
 
 	return Env{
 		DatabaseUrl: os.Getenv("DATABASE_URL"),
