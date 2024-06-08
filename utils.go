@@ -17,11 +17,8 @@ func GetEnv() Env {
 	}
 
 	return Env{
-		Db:       os.Getenv("DB"),
-		User:     os.Getenv("USER"),
-		Password: os.Getenv("PASSWORD"),
-		Port:     os.Getenv("PORT"),
-		Host:     os.Getenv("HOST"),
+		DatabaseUrl: os.Getenv("DATABASE_URL"),
+		ListenAddr:  os.Getenv("LISTEN_ADDR"),
 	}
 }
 

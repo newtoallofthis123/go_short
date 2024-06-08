@@ -3,11 +3,8 @@ package main
 import "time"
 
 type Env struct {
-	Db       string
-	User     string
-	Password string
-	Port     string
-	Host     string
+	DatabaseUrl string
+	ListenAddr  string
 }
 type CreateURLRequest struct {
 	url  string

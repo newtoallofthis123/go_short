@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
 	"log"
 
 	_ "github.com/lib/pq"
@@ -20,9 +19,7 @@ type DbInstance struct {
 
 func NewDBInstance() *DbInstance {
 	env := GetEnv()
-	connStr := fmt.Sprintf("user=%s password=%s dbname=%s host=%s port=%s sslmode=disable", env.User, env.Password, env.Db, env.Host, env.Port)
-	fmt.Println(connStr)
-	db, err := sql.Open("postgres", connStr)
+	db, err := sql.Open("postgres", env.DatabaseUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
