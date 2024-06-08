@@ -14,7 +14,9 @@ func main() {
 		log.Fatal(err)
 	}
 
-	api := NewAPIServer(":3579", store)
+	env := GetEnv()
+
+	api := NewAPIServer(env.ListenAddr, store)
 	err = api.Start()
 	if err != nil {
 		log.Fatal(err)
