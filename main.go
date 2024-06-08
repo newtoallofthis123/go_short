@@ -16,7 +16,7 @@ func main() {
 
 	env := GetEnv()
 
-	api := NewAPIServer(env.ListenAddr, store)
+	api := NewAPIServer(fmt.Sprintf(":%s", env.Port), store)
 	err = api.Start()
 	if err != nil {
 		log.Fatal(err)

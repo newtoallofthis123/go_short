@@ -12,9 +12,14 @@ import (
 func GetEnv() Env {
 	godotenv.Load()
 
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	return Env{
 		DatabaseUrl: os.Getenv("DATABASE_URL"),
-		ListenAddr:  os.Getenv("LISTEN_ADDR"),
+		Port:        port,
 	}
 }
 

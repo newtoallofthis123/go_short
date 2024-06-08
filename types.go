@@ -4,7 +4,7 @@ import "time"
 
 type Env struct {
 	DatabaseUrl string
-	ListenAddr  string
+	Port        string
 }
 type CreateURLRequest struct {
 	url  string
