@@ -3,16 +3,16 @@ package main
 import "time"
 
 type Env struct {
-	DatabaseUrl string
-	Port        string
+	DatabaseUrl string `json:"database_url,omitempty"`
+	Port        string `json:"port,omitempty"`
 }
 type CreateURLRequest struct {
-	url  string
-	hash string
+	Url  string `json:"url,omitempty"`
+	Hash string `json:"hash,omitempty"`
 }
 
 type Url struct {
-	hash      string
-	url       string
-	createdAt time.Time
+	Hash      string    `json:"hash,omitempty"`
+	Url       string    `json:"url,omitempty"`
+	CreatedAt time.Time `json:"created_at,omitempty"`
 }
